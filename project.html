@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<h1 style="background-color:DodgerBlue;">Menu&emsp;&emsp;&emsp;&emsp;User Name: R.Sridevi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sales Report
+</h1>
+  <head>
+<head>  
+<form>
+Select Category:
+  <select name="category" id="mySelect" onchange="fun()">    
+                        <option value="1">Rice</option>    
+                        <option value="2">Wheat</option>    
+                        <option value="3">Barley</option>    
+                            
+                    </select> 
+</form>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Production By Month for"
+	},
+	axisY: {
+		title: "Rice"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Rice",
+		dataPoints: [      
+			{ y: 500, label: "January" },
+			{ y: 600,  label: "February" },
+			{ y: 700,  label: "March" },
+			{ y: 800,  label: "April" },
+		]
+	}]
+});
+chart.render();
+
+}
+
+
+function fun() {
+var value = $( "#mySelect" ).val();
+var chart ;
+if(value == "1"){
+chart = new CanvasJS.Chart("chartContainer",{
+
+	animationEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Production By Month for"
+	},
+	axisY: {
+		title: "Rice"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Rice",
+		dataPoints: [      
+			{ y: 500, label: "January" },
+			{ y: 600,  label: "February" },
+			{ y: 700,  label: "March" },
+			{ y: 800,  label: "April" },
+		]
+	},
+
+]
+});
+}
+else if(value == "2")
+{
+chart = new CanvasJS.Chart("chartContainer",{
+
+	animationEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Production By Month for"
+	},
+	axisY: {
+		title: "Wheat"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Wheat",
+		dataPoints: [      
+			{ y: 100, label: "January" },
+			{ y: 400,  label: "February" },
+			{ y: 700,  label: "March" },
+			{ y: 550,  label: "April" },
+		]
+	},
+
+]
+});
+}
+else if(value == "3")
+{
+chart = new CanvasJS.Chart("chartContainer",{
+
+	animationEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Production By Month for"
+	},
+	axisY: {
+		title: "Barley"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Barley",
+		dataPoints: [      
+			{ y: 200, label: "January" },
+			{ y: 750,  label: "February" },
+			{ y: 400,  label: "March" },
+			{ y: 100,  label: "April" },
+		]
+	},
+
+]
+});
+}
+chart.render();
+
+
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
